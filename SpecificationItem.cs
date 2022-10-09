@@ -2,7 +2,7 @@
 
 namespace Magnit.Tokenization
 {
-    public class SpecificationItem
+    public sealed class SpecificationItem
     {
         public Regex Regex { get; set; }
         public string Key { get; set; }

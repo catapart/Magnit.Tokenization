@@ -11,22 +11,6 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>catapart</Authors>
     <Company>Cynic</Company>
-    <Copyright></Copyright>
-    <PackageProjectUrl>https://github.com/catapart/Magnit.Tokenization</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/catapart/Magnit.Tokenization</RepositoryUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Update="LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>

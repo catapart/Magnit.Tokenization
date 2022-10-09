@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Magnit.Tokenization
 {
-    public class Specification : IList<SpecificationItem>
+    public sealed class Specification : IList<SpecificationItem>
     {
         private List<SpecificationItem> _specItems = new List<SpecificationItem>();
         public SpecificationItem this[int index] { get => _specItems[index]; set => _specItems[index] = value; }

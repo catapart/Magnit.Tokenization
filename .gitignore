@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # Visual Studio Solution (class lib)
 *.sln
+Magnit.Tokenization.sln

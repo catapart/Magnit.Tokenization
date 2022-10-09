@@ -3,18 +3,13 @@ using System.Text;
 
 namespace Magnit.Tokenization
 {
-    public class Tokenizer
+    public sealed class Tokenizer
     {
-        public Specification Specification { get; private set; }
+        public Specification Specification { get; set; }
         private string? Input { get; set; }
         private int Cursor { get; set; }
         public int PreviousCursorPosition { get; set; }
-
-
         private Token? Lookahead { get; set; }
-
-
-        public delegate Specification SpecificationResolver(params object?[]? args);
 
         public Tokenizer(Specification specification)
         {
@@ -24,7 +19,7 @@ namespace Magnit.Tokenization
         }
 
 
-        public async Task<Token[]> Parse(string input, Specification? specification = null)
+        public async Task<List<Token>> Parse(string input, Specification? specification = null)
         {
             if(specification != null)
             {
@@ -33,7 +28,7 @@ namespace Magnit.Tokenization
 
             return await GetTokens(input);
         }
-        private async Task<Token[]> GetTokens(string input)
+        private async Task<List<Token>> GetTokens(string input)
         {
             this.Input = input;
             this.Cursor = 0;
@@ -50,7 +45,7 @@ namespace Magnit.Tokenization
             {
                 tokens.Add(await this.Consume(this.Lookahead.Type));
             }
-            return tokens.ToArray();
+            return tokens;
         }
 
         public async Task<Token> Consume(string? tokenType)
