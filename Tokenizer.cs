@@ -24,8 +24,13 @@ namespace Magnit.Tokenization
         }
 
 
-        public async Task<Token[]> Parse(string input)
+        public async Task<Token[]> Parse(string input, Specification? specification = null)
         {
+            if(specification != null)
+            {
+                this.Specification = specification;
+            }
+
             return await GetTokens(input);
         }
         private async Task<Token[]> GetTokens(string input)
